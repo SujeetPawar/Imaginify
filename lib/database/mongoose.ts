@@ -1,5 +1,5 @@
 import mongoose, { Mongoose } from "mongoose";
-
+require('dotenv').config()
 const MONGODB_URL = process.env.MONGODB_URL;
 
 interface MongooseConnection {

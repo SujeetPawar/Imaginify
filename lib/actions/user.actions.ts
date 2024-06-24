@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+require('dotenv').config()
 import User from "../database/models/user.model";
 import { connectToDatabase } from "../database/mongoose";
 import { handleError } from "../utils";
@@ -8,8 +9,8 @@ import { handleError } from "../utils";
 // CREATE
 export async function createUser(user: CreateUserParams) {
   try {
-    let a = await connectToDatabase();
-      console.log(a)
+    await connectToDatabase();
+
     const newUser = await User.create(user);
 
     return JSON.parse(JSON.stringify(newUser));

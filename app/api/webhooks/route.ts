@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 import { clerkClient } from "@clerk/nextjs";
+require('dotenv').config()
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
